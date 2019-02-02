@@ -1,5 +1,7 @@
-# Table of contents
+# Purchase List 
 
-* [Initial page](README.md)
-* [Test](test.md)
+
+This app is about add, remove and edit items and its respective price in a list. 
+
+
 
