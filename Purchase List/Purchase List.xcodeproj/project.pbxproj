@@ -13,6 +13,7 @@
 		AAD18DBD22064E390026AA1C /* Purchase_List.xcdatamodeld in Sources */ = {isa = PBXBuildFile; fileRef = AAD18DBB22064E380026AA1C /* Purchase_List.xcdatamodeld */; };
 		AAD18DBF22064E3A0026AA1C /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = AAD18DBE22064E3A0026AA1C /* Assets.xcassets */; };
 		AAD18DC222064E3A0026AA1C /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = AAD18DC022064E3A0026AA1C /* LaunchScreen.storyboard */; };
+		AAD18DCA220653790026AA1C /* Item.swift in Sources */ = {isa = PBXBuildFile; fileRef = AAD18DC9220653790026AA1C /* Item.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -24,6 +25,7 @@
 		AAD18DBE22064E3A0026AA1C /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		AAD18DC122064E3A0026AA1C /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		AAD18DC322064E3A0026AA1C /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		AAD18DC9220653790026AA1C /* Item.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Item.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -63,6 +65,7 @@
 				AAD18DC022064E3A0026AA1C /* LaunchScreen.storyboard */,
 				AAD18DC322064E3A0026AA1C /* Info.plist */,
 				AAD18DBB22064E380026AA1C /* Purchase_List.xcdatamodeld */,
+				AAD18DC9220653790026AA1C /* Item.swift */,
 			);
 			path = "Purchase List";
 			sourceTree = "<group>";
@@ -138,6 +141,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				AAD18DCA220653790026AA1C /* Item.swift in Sources */,
 				AAD18DB722064E380026AA1C /* ViewController.swift in Sources */,
 				AAD18DBD22064E390026AA1C /* Purchase_List.xcdatamodeld in Sources */,
 				AAD18DB522064E380026AA1C /* AppDelegate.swift in Sources */,
@@ -162,6 +166,7 @@
 			);
 			name = LaunchScreen.storyboard;
 			sourceTree = "<group>";
+			usesTabs = 0;
 		};
 /* End PBXVariantGroup section */
 
@@ -296,7 +301,7 @@
 				PRODUCT_BUNDLE_IDENTIFIER = "com.kaulitz.guimaraes.Purchase-List";
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SWIFT_VERSION = 4.2;
-				TARGETED_DEVICE_FAMILY = "1,2";
+				TARGETED_DEVICE_FAMILY = 1;
 			};
 			name = Debug;
 		};
@@ -314,7 +319,7 @@
 				PRODUCT_BUNDLE_IDENTIFIER = "com.kaulitz.guimaraes.Purchase-List";
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SWIFT_VERSION = 4.2;
-				TARGETED_DEVICE_FAMILY = "1,2";
+				TARGETED_DEVICE_FAMILY = 1;
 			};
 			name = Release;
 		};
