@@ -8,13 +8,14 @@
 
 import UIKit
 
-class  Item {
+class  Item: CustomStringConvertible {
     private var name:String
     private var price:Double
-    
-  public  init(_ name: String, _ price: Double) {
+    private var amount:Int
+    public  init(_ name: String, _ price: Double, _ amount: Int) {
         self.name = name
         self.price = price
+        self.amount = amount
     }
     
    public func getName()-> String  {
@@ -29,6 +30,19 @@ class  Item {
     public func setPrice(_ price: Double)  {
         self.price = price
     }
+    public func getAmount()-> String  {
+        return String(self.amount)
+    }
+    public func setAmount(_ amount: Int)  {
+        self.amount = amount
+    }
+    public func getTotal () -> String{
+        return String(format: "%.2f",(self.price * Double(self.amount)))
+    }
+    public var description: String{
+        return "\(self.getName())\t \(self.getPrice())\t\t \(self.getAmount())\t\t \(self.getTotal())"
+    }
+    
 }
 
 class Items {
@@ -37,12 +51,12 @@ class Items {
         self.items = Array<Item>()
     }
     
-    func addItem(_ name:String, _ price: Double )  {
-         let item = Item(name, price)
+   public func addItem(_ name:String, _ price: Double,_ amount: Int )  {
+         let item = Item(name, price,amount)
          self.items.append(item)
     }
     
-    func removeItem(_ name:String, _ price: Double )  {
+   public func removeItem(_ name:String )  {
         //let item = Item(name, price)
         var numberItem  = 0
         for item in self.items {
@@ -53,5 +67,25 @@ class Items {
                 numberItem+=1
             }
         }
+    }
+   public func getItems() ->  Array<String> {
+    var newItems:Array<String> = []
+    for item in self.items {
+        newItems.append(item.description)
+    }
+        return newItems
+    }
+    public func getTotalValues() ->  String {
+        var total:Double = 0
+        
+            for item in self.items {
+                total += Double(item.getTotal()) ?? 0
+            }
+        
+        
+        return String(total)
+    }
+   public func getTotalItems() -> Int {
+       return self.items.count
     }
 }
