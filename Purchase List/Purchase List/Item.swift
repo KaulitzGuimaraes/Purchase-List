@@ -40,7 +40,7 @@ class  Item: CustomStringConvertible {
         return String(format: "%.2f",(self.price * Double(self.amount)))
     }
     public var description: String{
-        return "\(self.getName())\t \(self.getPrice())\t\t \(self.getAmount())\t\t \(self.getTotal())"
+        return "\(self.getName()) - \(self.getPrice()) - \(self.getAmount()) - \(self.getTotal())"
     }
     
 }
@@ -68,6 +68,20 @@ class Items {
             }
         }
     }
+    public func updateItem(_ name:String, _ price : Double,_ amount: Int )  {
+        //let item = Item(name, price)
+        var numberItem  = 0
+        for item in self.items {
+            if item.getName().elementsEqual(name){
+                self.items[numberItem].setPrice(price)
+                self.items[numberItem].setAmount(amount)
+                break
+            }else{
+                numberItem+=1
+            }
+        }
+    }
+    
    public func getItems() ->  Array<String> {
     var newItems:Array<String> = []
     for item in self.items {
@@ -83,7 +97,7 @@ class Items {
             }
         
         
-        return String(total)
+        return String(format: "%.2f",total)
     }
    public func getTotalItems() -> Int {
        return self.items.count

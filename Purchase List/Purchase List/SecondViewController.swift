@@ -23,7 +23,20 @@ class SecondViewController: UIViewController {
          view.addGestureRecognizer(tap)
     }
     
-
+    @IBAction func updateItem(_ sender: Any) {
+        let price = Double(self.priceText.text!) ?? 0
+        let amount = Int(self.amountText.text!) ?? 0
+        ViewController.items.updateItem(nameText.text!, price, amount)
+        NotificationCenter.default.post(name: NSNotification.Name(rawValue: "load"), object: nil)
+        clearTextFields()
+    }
+    @IBAction func deleteItem(_ sender: Any) {
+          ViewController.items.removeItem(nameText.text!)
+         NotificationCenter.default.post(name: NSNotification.Name(rawValue: "load"), object: nil)
+        clearTextFields()
+    }
+    
+    
     /*
     // MARK: - Navigation
 
@@ -38,6 +51,7 @@ class SecondViewController: UIViewController {
         let amount = Int(self.amountText.text!) ?? 0
        ViewController.items.addItem(nameText.text!, price, amount)
          NotificationCenter.default.post(name: NSNotification.Name(rawValue: "load"), object: nil)
+        clearTextFields()
     }
     
     
@@ -45,5 +59,10 @@ class SecondViewController: UIViewController {
     @objc func dismissKeyboard() {
         //Causes the view (or one of its embedded text fields) to resign the first responder status.
         view.endEditing(true)
+    }
+    func clearTextFields()  {
+        self.amountText.text = ""
+        self.priceText.text = ""
+        self.nameText.text = ""
     }
 }
